@@ -118,7 +118,7 @@ Create the `project/plugins.sbt` file and at the following:
           lazy val mechaSuperRepoSettings = Defaults.defaultSettings ++
             defaultMechaSuperSettings ++ Seq(
             name := superName,
-            scalaVersion := "2.11.4",
+            scalaVersion := "2.12.8",
             version := "0.1",
             organization := "com.storm-enroute",
             libraryDependencies ++= Seq()

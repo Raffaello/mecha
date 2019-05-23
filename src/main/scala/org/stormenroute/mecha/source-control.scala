@@ -2,15 +2,11 @@ package org.stormenroute.mecha
 
 
 
-import com.typesafe.config._
 import java.io._
-import org.apache.commons.io._
-import sbt.{Future => _, Process => _, ProcessLogger => _, _}
-import sbt.Keys._
-import scala.annotation._
+
 import scala.collection._
-import scala.concurrent._
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent._
 import scala.concurrent.duration._
 import scala.sys.process._
 

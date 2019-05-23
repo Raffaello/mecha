@@ -87,8 +87,8 @@ trait MechaSuperBuild extends Build {
       superName,
       superDirectory,
       settings = superSettings ++ Seq(
-        mechaEditRefreshKey <<= mechaEditRefreshKey.dependsOn(refreshes: _*),
-        mechaNightlyKey <<= mechaNightlyKey.dependsOn(nightlies: _*)
+        mechaEditRefreshKey := mechaEditRefreshKey.dependsOn(refreshes: _*),
+        mechaNightlyKey := mechaNightlyKey.dependsOn(nightlies: _*)
       )
     ))(_ aggregate _)
     otherprojects ++ Seq(superproject)
@@ -120,9 +120,9 @@ trait MechaSuperBuild extends Build {
       mechaEditRefreshKey := {},
       mechaPublishKey := {},
       mechaNightlyKey := {},
-      mechaNightlyKey <<= mechaNightlyKey.dependsOn(mechaPublishKey),
-      mechaNightlyKey <<= mechaNightlyKey.dependsOn(test in Test),
-      mechaNightlyKey <<= mechaNightlyKey.dependsOn(packageBin in Compile)
+      mechaNightlyKey := mechaNightlyKey.dependsOn(mechaPublishKey),
+      mechaNightlyKey := mechaNightlyKey.dependsOn(test in Test),
+      mechaNightlyKey := mechaNightlyKey.dependsOn(packageBin in Compile)
     )
   }
 

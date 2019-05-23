@@ -8,7 +8,7 @@ object MechaSuperRepoBuild extends MechaSuperBuild {
   lazy val mechaSuperRepoSettings = Defaults.defaultSettings ++
     defaultMechaSuperSettings ++ Seq(
     name := superName,
-    scalaVersion := "2.11.4",
+    scalaVersion := "2.12.8",
     version := "0.1.0-SNAPSHOT",
     organization := "com.storm-enroute",
     libraryDependencies ++= Seq(),

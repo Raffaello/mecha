@@ -1,19 +1,16 @@
 package org.stormenroute
 
-
+import java.io._
 
 import com.typesafe.config._
-import java.io._
-import org.apache.commons.io._
-import sbt.{Future => _, Process => _, ProcessLogger => _, _}
-import sbt.Keys._
+import org.apache.logging.log4j.Logger
+import org.stormenroute.mecha.MechaLog
+import sbt.internal.util.SimpleReader
+import sbt.{SettingKey, TaskKey}
+
+import scala.sys.process.ProcessLogger
 import scala.annotation._
 import scala.collection._
-import scala.concurrent._
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.duration._
-import scala.sys.process._
-
 
 
 package mecha {
@@ -297,8 +294,9 @@ package object mecha {
 
   private[mecha] object GitIgnore {
     import java.nio.charset.StandardCharsets._
-    import java.nio.file.{FileSystems, Paths, Files, Path}
     import java.nio.file.StandardOpenOption._
+    import java.nio.file.{FileSystems, Files, Path, Paths}
+
     import scala.collection.JavaConversions._
 
     val log = MechaLog.Println
